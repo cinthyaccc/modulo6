@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                 http://www.springframework.org/schema/beans/spring-beans.xsd
+                                 http://www.springframework.org/schema/security
+                                 http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!-- Configuración de seguridad -->
+    <http auto-config="true">
+        <!-- Configura la página de inicio de sesión personalizada -->
+        <form-login login-page="modulo6/login" default-target-url="/"
+                    authentication-failure-url="/login?error=true" />
+        <intercept-url pattern="/CrearCapacitacion" access="hasAnyAuthority('cliente')"/>
+        <intercept-url pattern="/ListarCapacitaciones" access="hasAnyAuthority('cliente')"/>
+        <intercept-url pattern="/ListarUsuarios" access="hasAnyAuthority('administrativo')"/>
+    </http>
+
+    <!-- Configuración de autenticación -->
+    <authentication-manager>
+        <authentication-provider>
+            <password-encoder hash="bcrypt"/>
+            <user-service>
+                <user name="cliente" authorities="cliente" password="$2a$10$qiy/hp5tlOv5/.ku.5byY.hcC8rHs0M907wirqRinbjSmgzIUlm8q" />
+                <user name="administrativo" authorities="administrativo" password="$2a$10$DUhPTVFdJV.bRmxjQFUabe7A5bQT4ETb0j8BMKd5oBPonT4RBjhoa" />
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>
