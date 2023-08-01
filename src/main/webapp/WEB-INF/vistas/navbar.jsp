@@ -27,7 +27,11 @@
 						class="nav-link" href="CrearCapacitacion" style="color: white;">Crear
 						Capacitación</a> <a class="nav-link" href="ListarCapacitaciones"
 						style="color: white;">Listar Capacitaciones</a>
-					<a class="nav-link" href="Login"
+						
+						<a class="nav-link" href="ListarUsuarios"
+						style="color: white;">Listar Usuarios</a>
+						
+					<a class="nav-link" href="login"
 						style="color: white;">Login</a>
 						
 					

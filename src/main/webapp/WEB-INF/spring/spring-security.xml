@@ -9,12 +9,15 @@
 
     <!-- Configuración de seguridad -->
     <http auto-config="true">
-        <!-- Configura la página de inicio de sesión personalizada -->
-        <form-login login-page="modulo6/login" default-target-url="/"
-                    authentication-failure-url="/login?error=true" />
-        <intercept-url pattern="/CrearCapacitacion" access="hasAnyAuthority('cliente')"/>
-        <intercept-url pattern="/ListarCapacitaciones" access="hasAnyAuthority('cliente')"/>
-        <intercept-url pattern="/ListarUsuarios" access="hasAnyAuthority('administrativo')"/>
+    <intercept-url pattern="/" access="permitAll"/>
+    <intercept-url pattern="/CrearCapacitacion" access="hasAnyAuthority('cliente')"/>  
+        
+       <form-login login-page="/login"
+       authentication-failure-url="/error"
+       username-parameter="username"
+       password-parameter="password"/>
+       <csrf disabled="true"/>
+       <logout logout-success-url="/login"/>
     </http>
 
     <!-- Configuración de autenticación -->
