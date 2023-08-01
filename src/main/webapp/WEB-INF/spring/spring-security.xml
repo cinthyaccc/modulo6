@@ -9,9 +9,11 @@
 
     <!-- Configuración de seguridad -->
     <http auto-config="true">
-    <intercept-url pattern="/" access="permitAll"/>
+   
     <intercept-url pattern="/CrearCapacitacion" access="hasAnyAuthority('cliente')"/>  
-        
+     <intercept-url pattern="/ListarCapacitacion" access="hasAnyAuthority('cliente')"/>
+     <intercept-url pattern="/ListarUsuarios" access="hasAnyAuthority('administrativo')"/>    
+      <intercept-url pattern="/" access="permitAll"/>
        <form-login login-page="/login"
        authentication-failure-url="/error"
        username-parameter="username"
