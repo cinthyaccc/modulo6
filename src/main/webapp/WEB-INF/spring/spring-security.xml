@@ -9,17 +9,18 @@
 
     <!-- Configuración de seguridad -->
     <http auto-config="true">
-   
-    <intercept-url pattern="/CrearCapacitacion" access="hasAnyAuthority('cliente')"/>  
-     <intercept-url pattern="/ListarCapacitacion" access="hasAnyAuthority('cliente')"/>
-     <intercept-url pattern="/ListarUsuarios" access="hasAnyAuthority('administrativo')"/>    
-      <intercept-url pattern="/" access="permitAll"/>
-       <form-login login-page="/login"
-       authentication-failure-url="/error"
-       username-parameter="username"
-       password-parameter="password"/>
-       <csrf disabled="true"/>
-       <logout logout-success-url="/login"/>
+        <intercept-url pattern="/CrearCapacitacion" access="hasAnyAuthority('ROLE_cliente')"/>
+        <intercept-url pattern="/ListarCapacitaciones" access="hasAnyAuthority('ROLE_cliente')"/>
+        <intercept-url pattern="/ListarUsuarios" access="hasAnyAuthority('ROLE_administrativo')"/>
+        <intercept-url pattern="/logout" access="permitAll" /> <!-- Permitir acceso a todos -->
+        <intercept-url pattern="/" access="permitAll"/>
+        <form-login login-page="/login"
+                    authentication-failure-url="/error"
+                    username-parameter="username"
+                    password-parameter="password"/>
+       			 <csrf disabled="true"/>
+        <logout logout-success-url="/"/>
+        
     </http>
 
     <!-- Configuración de autenticación -->
@@ -27,8 +28,8 @@
         <authentication-provider>
             <password-encoder hash="bcrypt"/>
             <user-service>
-                <user name="cliente" authorities="cliente" password="$2a$10$qiy/hp5tlOv5/.ku.5byY.hcC8rHs0M907wirqRinbjSmgzIUlm8q" />
-                <user name="administrativo" authorities="administrativo" password="$2a$10$DUhPTVFdJV.bRmxjQFUabe7A5bQT4ETb0j8BMKd5oBPonT4RBjhoa" />
+                <user name="cliente" authorities="ROLE_cliente" password="$2a$10$qiy/hp5tlOv5/.ku.5byY.hcC8rHs0M907wirqRinbjSmgzIUlm8q"/>
+                <user name="administrativo" authorities="ROLE_administrativo" password="$2a$10$DUhPTVFdJV.bRmxjQFUabe7A5bQT4ETb0j8BMKd5oBPonT4RBjhoa"/>
             </user-service>
         </authentication-provider>
     </authentication-manager>

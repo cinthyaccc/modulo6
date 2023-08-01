@@ -10,10 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
-    @RequestMapping(path = "/inicioH", method = RequestMethod.GET)
-    public ModelAndView mostrarHome() {
-        return new ModelAndView("inicio");
-    }
+ 
 
     @RequestMapping(value = "/login")
     public ModelAndView login() {
@@ -25,7 +22,7 @@ public class LoginController {
         return new ModelAndView("login", "error", "true");
     }
 
-    @RequestMapping(value = "/logout")
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public ModelAndView logout() {
         // Realiza el proceso de cierre de sesión si es necesario, por ejemplo, eliminar la autenticación actual
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -33,10 +30,8 @@ public class LoginController {
             SecurityContextHolder.clearContext(); // Esto limpiará la autenticación actual
         }
 
-        // Redirige a una vista que muestre un mensaje de confirmación de que el usuario ha cerrado sesión
-        ModelAndView modelAndView = new ModelAndView("logoutConfirmation");
-        modelAndView.addObject("message", "Has cerrado sesión exitosamente.");
-        return modelAndView;
+     
+       return new ModelAndView("redirect:/");
     }
 
     // Método para obtener el nombre de usuario y sus roles

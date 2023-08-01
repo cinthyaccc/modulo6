@@ -16,20 +16,29 @@
                     <% if (request.getRemoteUser() == null) { %>
                         <a class="nav-link" href="Contacto" style="color: white;">Contacto</a>
                         <a class="nav-link" href="login" style="color: white;">Login</a>
+                    	
                     <% } %>
                     <%-- Verificar si el usuario tiene el rol "cliente" --%>
-                    <% if (request.isUserInRole("cliente")) { %>
+                    <% if (request.isUserInRole("ROLE_cliente")) { %>
+                    	
+                        <a class="nav-link" href="Contacto" style="color: white;">Contacto</a>
                         <a class="nav-link" href="CrearCapacitacion" style="color: white;">Crear Capacitación</a>
-                        <a class="nav-link" href="ListarUsuarios" style="color: white;">Listar Usuarios</a>
+                        <a class="nav-link" href="ListarCapacitaciones" style="color: white;">Listar Capacitaciones</a>
+                   		 <form action="${pageContext.request.contextPath}/logout" method="post">
+                            <button type="submit" class="btn btn-link" style="color: white;">Logout</button>
+                        </form>
                     <% } %>
                     <%-- Verificar si el usuario tiene el rol "administrativo" --%>
-                    <% if (request.isUserInRole("administrativo")) { %>
-                        <a class="nav-link" href="ListarCapacitaciones" style="color: white;">Listar Capacitaciones</a>
+                    <% if (request.isUserInRole("ROLE_administrativo")) { %>
+                    	<a class="nav-link" href="Contacto" style="color: white;">Contacto</a>
+                        <a class="nav-link" href="ListarUsuarios" style="color: white;">Listar Usuario</a>
+                        <form action="logout" method="post">
+                            <button type="submit" class="btn btn-link" style="color: white;">Logout</button>
+                        </form>
+                   
                     <% } %>
-                    <%-- Verificar si el usuario está autenticado --%>
-                    <% if (request.getRemoteUser() != null) { %>
-                        <h3>Este contenido solo se mostrará a usuarios autenticados.</h3>
-                    <% } %>
+                 
+                  
                 </div>
             </div>
         </nav>
