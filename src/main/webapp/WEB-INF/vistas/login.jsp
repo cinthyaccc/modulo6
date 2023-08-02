@@ -3,24 +3,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="/modulo6/css/styles.css">
+<link rel="stylesheet" type="text/css" href="/modulo6/res/css/styles.css">
 <title>Login</title>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
 body {
-    background-image: url("/modulo6/img/imagen1.jpeg");
+    background-image: url("/modulo6/res/img/imagen1.jpeg");
+    
     background-repeat: no-repeat;
     background-size: cover;
 }
 </style>
 </head>
-<header><img class="imagen-zoom" src="/modulo6/resources/logoGrupo5.jpg" alt="Logo de la empresa"></header>
+<header><img class="imagen-zoom" src="/modulo6/res/img/logogrupo4.png" alt="Logo de la empresa"></header>
 <body>
 <div class=container>
 <%
 String error = (String) request.getAttribute("error");
 if (error != null && error.equals("true")) {
-	out.println("<h3 class='alert alert-danger'>Error de Autenticación</h3>");
+    // Código JavaScript para mostrar la alerta de error
+	out.println("<script>Swal.fire('Error de Autenticación', 'Verifica tus credenciales', 'error');</script>");
 }
 %>
 <section class="form-login">

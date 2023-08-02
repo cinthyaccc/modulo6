@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -13,7 +12,7 @@
 
     <!-- Editar el nombre (name) y la descripción (description) del Proyecto -->
     <name>AwakeLab Maven Spring MVC</name>
-    <description>Proyecto Spring MVC con implementaciones basicas</description>
+    <description>Proyecto Spring MVC con implementaciones básicas</description>
 
     <!-- Propiedades -->
     <properties>
@@ -71,21 +70,21 @@
 
     <!-- Dependencias -->
     <dependencies>
-        <!-- Spring Framework: Context > https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <!-- Spring Framework: Context -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${org.springframework-version}</version>
         </dependency>
 
-        <!-- Spring Framework: WebMVC > https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <!-- Spring Framework: WebMVC -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${org.springframework-version}</version>
         </dependency>
 
-        <!-- Java Servlet API > https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <!-- Java Servlet API -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -93,7 +92,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- JavaServer Pages API > https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+        <!-- JavaServer Pages API -->
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
@@ -101,111 +100,130 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Java Standard Tag Library > https://mvnrepository.com/artifact/javax.servlet/jstl -->
+        <!-- Java Standard Tag Library -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${javax.servlet.jstl-version}</version>
         </dependency>
-        
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-		<dependency>
-		    <groupId>mysql</groupId>
-		    <artifactId>mysql-connector-java</artifactId>
-		    <version>8.0.28</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
-		<dependency>
-		    <groupId>org.springframework.data</groupId>
-		    <artifactId>spring-data-jpa</artifactId>
-		    <version>2.4.3</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-tx</artifactId>
-		    <version>${org.springframework-version}</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
-		<dependency>
-		    <groupId>javax.persistence</groupId>
-		    <artifactId>javax.persistence-api</artifactId>
-		    <version>2.2</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-core</artifactId>
-		    <version>5.4.27.Final</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
-		<dependency>
-		    <groupId>org.hibernate.javax.persistence</groupId>
-		    <artifactId>hibernate-jpa-2.1-api</artifactId>
-		    <version>1.0.2.Final</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-jdbc</artifactId>
-		    <version>${org.springframework-version}</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-orm</artifactId>
-		    <version>${org.springframework-version}</version>
-		</dependency>
 
-        <!-- JUnit Jupiter API > https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <!-- MySQL Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
+
+        <!-- Spring Data JPA -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.4.3</version>
+        </dependency>
+
+        <!-- Spring Transaction Management -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <!-- Java Persistence API -->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <!-- Hibernate Core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.27.Final</version>
+        </dependency>
+
+        <!-- Hibernate JPA 2.1 API -->
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.2.Final</version>
+        </dependency>
+
+        <!-- Spring JDBC -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <!-- Spring ORM -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <!-- JUnit Jupiter API -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${org.junit.jupiter-version}</version>
             <scope>test</scope>
         </dependency>
-          <!-- Dependencias Para Spring Security-->
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-core</artifactId>
-    <version>5.2.7.RELEASE</version>
-</dependency>
-<dependency>
+
+        <!-- Spring Security Core -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>5.2.7.RELEASE</version>
+        </dependency>
+
+        <!-- Thymeleaf and Spring Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.5.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+       <dependency>
     <groupId>org.thymeleaf</groupId>
-    <artifactId>thymeleaf-spring5</artifactId>
+    <artifactId>thymeleaf</artifactId>
     <version>3.1.2.RELEASE</version>
 </dependency>
 
 <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.5.4</version>
+    <groupId>org.thymeleaf.extras</groupId>
+    <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+    <version>3.1.2.RELEASE</version>
 </dependency>
 
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-web</artifactId>
-    <version>5.2.7.RELEASE</version>
-</dependency>
 
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-config</artifactId>
-    <version>5.2.7.RELEASE</version>
-</dependency>
+        <!-- Spring Security Web -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>5.2.7.RELEASE</version>
+        </dependency>
 
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-taglibs</artifactId>
-    <version>5.2.7.RELEASE</version>
-</dependency>
+        <!-- Spring Security Config -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>5.2.7.RELEASE</version>
+        </dependency>
+
+        <!-- Spring Security Taglibs -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>5.2.7.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>

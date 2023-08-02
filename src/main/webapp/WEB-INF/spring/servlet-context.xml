@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:beans="http://www.springframework.org/schema/beans"
     xmlns:context="http://www.springframework.org/schema/context"
-    xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
-        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- DispatcherServlet Context: Define la infraestructura de este Servlet -->
 
@@ -28,10 +28,17 @@
         <beans:property name="suffix" value=".jsp" />
     </beans:bean>
 
-    <!--
-        Escanéa el Classpath en búsqueda de anotaciones como @Component, @Repository, @Service,
-        @Controller, etc.
-    -->
+    <!-- Configuración del ViewResolver para Thymeleaf -->
+    <beans:bean id="thymeleafViewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <beans:property name="templateEngine" ref="templateEngine" />
+    </beans:bean>
+
+    <!-- Configuración del TemplateEngine de Thymeleaf -->
+    <beans:bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <!-- Configuración del template resolver y otras opciones -->
+    </beans:bean>
+
+    <!-- Escanea el Classpath en búsqueda de anotaciones como @Component, @Repository, @Service, @Controller, etc. -->
     <context:component-scan base-package="model.controller" />
 
 </beans:beans>
