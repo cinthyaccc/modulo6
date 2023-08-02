@@ -9,18 +9,21 @@ import model.repository.IUsuarioRepository;
 
 @Service
 public class UsuarioService {
-@Autowired
-private IUsuarioRepository usRepo;
-public UsuarioService() {
-	super();
-}
+	@Autowired
+	private IUsuarioRepository usRepo;
+	public UsuarioService() {
+		super();
+	}
 
-public List<Usuario> getUsuarios(){
-	return usRepo.findAll();
-}
+	public List<Usuario> getUsuarios() {
+		return usRepo.findAll();
+	}
 
-public void crearUsuario(Usuario u) {
-	usRepo.save(u);
+	public void crearUsuario(Usuario u) {
+		usRepo.save(u);
+	}
+	
+	public List<Usuario> getAllClientes() {
+		return usRepo.findByTipo("Cliente");
+	}
 }
-}
-
