@@ -30,15 +30,13 @@
 
 	<!-- Configuración de autenticación -->
 	<authentication-manager>
-		<authentication-provider>
-			<password-encoder hash="bcrypt" />
-			<user-service>
-				<user name="cliente" authorities="ROLE_cliente"
-					password="$2a$10$qiy/hp5tlOv5/.ku.5byY.hcC8rHs0M907wirqRinbjSmgzIUlm8q" />
-				<user name="administrativo" authorities="ROLE_administrativo"
-					password="$2a$10$DUhPTVFdJV.bRmxjQFUabe7A5bQT4ETb0j8BMKd5oBPonT4RBjhoa" />
-			</user-service>
-		</authentication-provider>
-	</authentication-manager>
+        <authentication-provider>
+            <password-encoder hash="bcrypt"/>
+            <jdbc-user-service data-source-ref="ds"
+            users-by-username-query ="select user as username, password, 1 as enable from login where user = ?"
+            authorities-by-username-query="select user as username, rol as authority from login where user= ?"/>
+           
+        </authentication-provider>
+    </authentication-manager>
 
 </beans:beans>
