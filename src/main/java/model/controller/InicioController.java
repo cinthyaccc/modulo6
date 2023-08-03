@@ -8,14 +8,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class InicioController {
 
-    /**
-     * Maneja las solicitudes que se le hacen a la raíz del sitio
-     * 
-     * @return un objeto {@link ModelAndView} con la respuesta al cliente
-     */
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public ModelAndView mostrarInicio() {
-        return new ModelAndView("inicio");
-    }
+	/**
+	 * Maneja las solicitudes que se le hacen a la raíz del sitio
+	 * 
+	 * @return un objeto {@link ModelAndView} con la respuesta al cliente
+	 */
+	@RequestMapping(path = "/", method = RequestMethod.GET)
+	public ModelAndView mostrarInicio() {
+		return new ModelAndView("inicio");
+	}
 
 }
