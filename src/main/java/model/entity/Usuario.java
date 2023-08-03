@@ -11,13 +11,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="usuarios")
-public class Usuario  {
+@Table(name = "usuarios")
+public class Usuario {
 	// se crean los atributos de la clase Usuario
 	@Id
-	@Column (name="id")
+	@Column(name = "id")
 	private int id;
 	private String nombre;
 	private String fechaNacimiento;
@@ -55,7 +54,7 @@ public class Usuario  {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 
@@ -88,21 +87,21 @@ public class Usuario  {
 	}
 
 	public boolean setFechaNacimiento(String fechaNacimiento) {
-	    if (fechaNacimiento == null) {
-	        return false; // La fecha es nula, formato incorrecto
-	    }
+		if (fechaNacimiento == null) {
+			return false; // La fecha es nula, formato incorrecto
+		}
 
-	    String formatoFecha = "dd/MM/yyyy";
-	    SimpleDateFormat sdf = new SimpleDateFormat(formatoFecha);
-	    sdf.setLenient(false); // Evita la flexibilidad en el análisis de fechas
+		String formatoFecha = "dd/MM/yyyy";
+		SimpleDateFormat sdf = new SimpleDateFormat(formatoFecha);
+		sdf.setLenient(false); // Evita la flexibilidad en el análisis de fechas
 
-	    try {
-	        sdf.parse(fechaNacimiento);
-	        this.fechaNacimiento = fechaNacimiento;
-	        return true; // La fecha tiene el formato correcto y fue establecida correctamente
-	    } catch (ParseException e) {
-	        return false; // La fecha no tiene el formato correcto
-	    }
+		try {
+			sdf.parse(fechaNacimiento);
+			this.fechaNacimiento = fechaNacimiento;
+			return true; // La fecha tiene el formato correcto y fue establecida correctamente
+		} catch (ParseException e) {
+			return false; // La fecha no tiene el formato correcto
+		}
 	}
 
 	public int getRun() {

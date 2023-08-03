@@ -7,20 +7,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ContactoController {
-    // Inyectar la dependencia del bean ContactoDao
-  
-   
-
-    /**
-     * Maneja las solicitudes que se le hacen a la raíz del sitio
-     * 
-     * @return un objeto {@link ModelAndView} con la respuesta al cliente
-     */
-    @RequestMapping(path = "/Contacto", method = RequestMethod.GET)
-    public ModelAndView mostrarContacto() {
-        return new ModelAndView("contacto");
-    }
-    
-  
-    }
-
+	// Inyectar la dependencia del bean ContactoDao
+	/**
+	 * Maneja las solicitudes que se le hacen a la raíz del sitio
+	 * 
+	 * @return un objeto {@link ModelAndView} con la respuesta al cliente
+	 */
+	@RequestMapping(path = "/Contacto", method = RequestMethod.GET)
+	public ModelAndView mostrarContacto() {
+		return new ModelAndView("contacto");
+	}
+}

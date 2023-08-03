@@ -11,6 +11,7 @@ import model.repository.IUsuarioRepository;
 public class UsuarioService {
 	@Autowired
 	private IUsuarioRepository usRepo;
+
 	public UsuarioService() {
 		super();
 	}
@@ -22,7 +23,7 @@ public class UsuarioService {
 	public void crearUsuario(Usuario u) {
 		usRepo.save(u);
 	}
-	
+
 	public List<Usuario> getAllClientes() {
 		return usRepo.findByTipo("Cliente");
 	}

@@ -19,8 +19,10 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
         <property name="url" value="jdbc:mysql://localhost:3306/prevencion_riesgos"></property>
         <property name="username" value="modulo5"></property>
-        <property name="password" value="root"></property>
+        <property name="password" value="123456789"></property>
     </bean>
+    
+	<!-- CLAVES PARA LOS PERFILES cliente = 061273, administrativo = 1234 -->
     
     <!-- Configuración del EntityManagerFactory -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

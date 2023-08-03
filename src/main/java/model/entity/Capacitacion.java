@@ -39,7 +39,7 @@ public class Capacitacion {
 		this.duracion = duracion;
 		this.cantidad = cantidad;
 		this.nombre = nombre;
-        this.detalle = mostrarDetalle();
+		this.detalle = mostrarDetalle();
 
 	}
 
@@ -179,14 +179,14 @@ public class Capacitacion {
 			return false;
 		}
 	}
-	
-    public String getDetalle() {
-        return detalle;
-    }
 
-    public void setDetalle(String detalle) {
-        this.detalle = detalle;
-    }
+	public String getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(String detalle) {
+		this.detalle = detalle;
+	}
 
 	public String mostrarDetalle() {
 		return "La capacitación será en " + lugar + " a las " + hora + " del día " + dia + ", y durará " + duracion
