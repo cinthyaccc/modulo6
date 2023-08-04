@@ -20,6 +20,10 @@
 			access="hasAnyAuthority('ROLE_administrativo')" />
 		<intercept-url pattern="/logout" access="permitAll" /> <!-- Permitir acceso a todos -->
 		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/api/capacitaciones"
+			access="hasAnyAuthority('ROLE_cliente')" />
+		<intercept-url pattern="/api/clientes"
+			access="hasAnyAuthority('ROLE_administrativo')" />
 		<form-login login-page="/login"
 			authentication-failure-url="/error" username-parameter="username"
 			password-parameter="password" />

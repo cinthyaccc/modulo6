@@ -12,7 +12,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $.ajax({
-                url: "http://localhost:8080/modulo6/api/capacitaciones",
+                url: "http:/modulo6/api/capacitaciones",
                 type: "GET",
                 dataType: "json",
                 success: function (data) {

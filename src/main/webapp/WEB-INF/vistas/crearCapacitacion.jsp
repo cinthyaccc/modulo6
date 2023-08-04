@@ -25,9 +25,6 @@ body {
 	<div class="contacto" style="display: flex; justify-content: center;">
 		<form action="/modulo6/CrearCapacitacion" method="post" onsubmit="return enviarFormulario(event)">
 			<h1 class="tituloContacto">Formulario de Capacitación</h1>
-			<label for="identificador">Ingrese Identificador de la Capacitación:</label><br>
-			<input type="text" id="identificador" name="identificador" title="Campo Obligatorio / Debe Introducir un Valor Numérico."><br>
-			<br> <span id="idCapacitacionValidationMessage" style="color: red;"></span> <br> 
 			<label for="nombre">Ingrese Nombre de la Capacitación:</label><br> 
 			<input type="text" id="nombre" name="nombre" title="Campo Obligatorio"><br> 
 			<br><span id="nombreValidationMessage" style="color: red;"></span> <br> 
@@ -43,7 +40,7 @@ body {
 			<label for="lugar">Ingrese el Lugar de la Capacitación:</label><br> 
 			<input type="text" id="lugar" name="lugar" title="Campo Obligatorio / Min 10 Caracteres Max 50"><br>
 			<br> <span id="lugarValidationMessage" style="color: red;"></span> <br>
-			<label for="duracion">Ingrese la Duración de la Capacitación:</label><br> 
+			<label for="duracion">Ingrese la Duración de la Capacitación(cantidad minutos):</label><br> 
 			<input type="text" id="duracion" name="duracion" title="Campo Obligatorio / Max 70 Caracteres."><br>
 			<br> <span id="duracionValidationMessage" style="color: red;"></span> <br>
 			<label for="cantidadAsistentes">Ingrese la Cantidad de Asistentes:</label><br> 
@@ -57,21 +54,6 @@ body {
 	</div>
 
 	<script>
-//Validar Campo idCapacitacion
-var idCapacitacionInput = document.getElementById('identificador');
-var idCapacitacionValidationMessage = document.getElementById('idCapacitacionValidationMessage');
-
-idCapacitacionInput.addEventListener('input', function() {
-  var idCapacitacionValue = idCapacitacionInput.value.trim();
-  
-  if (idCapacitacionValue === '') {
-    idCapacitacionValidationMessage.textContent = 'Por favor, introduzca el Identificador de la Capacitación. Campo Obligatorio';
-  } else if (!/^\d+$/.test(idCapacitacionValue)) {
-    idCapacitacionValidationMessage.textContent = 'Por favor, introduzca un Identificador de la Capacitación válido. Solo se permiten números enteros.';
-  } else {
-    idCapacitacionValidationMessage.textContent = '';
-  }
-});
 
 //Validar Campo nombre
 var nombreInput = document.getElementById('nombre');
@@ -158,7 +140,7 @@ duracionInput.addEventListener('input', function() {
   var duracionValue = duracionInput.value.trim();
   
   if (duracionValue === '') {
-    duracionValidationMessage.textContent = 'Por favor, introduzca la Duración de la Capacitación. Campo Obligatorio';
+    duracionValidationMessage.textContent = 'Por favor, introduzca la Cantidad de minutos de la Capacitación. Campo Obligatorio';
   } else if (duracionValue.length > 70) {
     duracionValidationMessage.textContent = 'Por favor, introduzca una Duración con una longitud máxima de 70 caracteres.';
   } else {
