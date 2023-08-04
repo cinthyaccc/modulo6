@@ -7,23 +7,34 @@ import org.springframework.stereotype.Service;
 
 import model.entity.Capacitacion;
 import model.repository.ICapacitacionRepository;
+
 @Service
 public class CapacitacionService {
-@Autowired
-private ICapacitacionRepository cliRepo;
 
+    private final ICapacitacionRepository capacitacionRepository;
 
-	public CapacitacionService() {
-		super();
-	}
-	
-	public List<Capacitacion> getCapacitaciones(){
-		return cliRepo.findAll();
-	}
-	
-	public void crearCapacitaciones(Capacitacion c, String detalle) {
-	    // Antes de guardar la capacitación, asignamos el detalle usando el método mostrarDetalle()
-	    c.mostrarDetalle();
-	    cliRepo.save(c);
-	}
+    @Autowired
+    public CapacitacionService(ICapacitacionRepository capacitacionRepository) {
+        this.capacitacionRepository = capacitacionRepository;
+    }
+
+    public List<Capacitacion> getCapacitaciones() {
+        return capacitacionRepository.findAll();
+    }
+
+    public List<Capacitacion> getUltimasTresCapacitaciones() {
+        List<Capacitacion> todasLasCapacitaciones = capacitacionRepository.findUltimasTresCapacitaciones();
+        return limitarATres(todasLasCapacitaciones);
+    }
+
+    private List<Capacitacion> limitarATres(List<Capacitacion> capacitaciones) {
+        return capacitaciones.subList(0, Math.min(capacitaciones.size(), 3));
+    }
+
+    public void crearCapacitaciones(Capacitacion c, String detalle) {
+        // Antes de guardar la capacitación, asignamos el detalle usando el método mostrarDetalle()
+        c.mostrarDetalle();
+        capacitacionRepository.save(c);
+    }
 }
+
